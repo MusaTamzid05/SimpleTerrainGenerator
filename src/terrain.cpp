@@ -93,6 +93,18 @@ void Terrain::init_vertices() {
         }
     }
 
+    for(int z = 0; z < m_rows; z += 1) {
+        for(int x = 0; x < m_cols; x += 1) {
+            if(x == z)  {
+                Vertex vertex = get_vertex(x, z);
+                vertex.m_position.y = 1.0f;
+                set_vertex(x, z, vertex);
+
+            }
+
+        }
+    }
+
 
 }
 
