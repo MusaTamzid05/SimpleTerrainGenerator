@@ -4,6 +4,7 @@
 #include "consts.h"
 #include "triangle.h"
 #include "camera.h"
+#include "terrain.h"
 
 
 
@@ -22,10 +23,12 @@ Window::Window(const std::string& title):m_running(false) {
     glEnable(GL_DEPTH_TEST);
     
 
-    m_triangle = new Triangle();
     Camera::get_instance()->init(glm::vec3(0.0f, 0.0f, 4.0f));
     first_mouse_move = true;
 
+    //m_triangle = new Triangle();
+    m_terrain = new Terrain(100, 100);
+    m_terrain->init();
 
 }
 
@@ -122,7 +125,7 @@ void Window::render() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 
-    m_triangle->render();
+    m_terrain->render();
     m_window->display();
 
 }
@@ -130,5 +133,5 @@ void Window::render() {
 
 void Window::update(float delta_time) {
     Camera::get_instance()->update_camera_vectors();
-    m_triangle->update();
+    m_terrain->update();
 }

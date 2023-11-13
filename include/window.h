@@ -9,6 +9,7 @@ namespace sf {
 #include <string>
 
 struct Triangle;
+struct Terrain;
 
 struct Window {
     Window(const std::string& title="Window");
@@ -22,7 +23,9 @@ struct Window {
 
 
     sf::RenderWindow* m_window;
-    Triangle* m_triangle;
+    //Triangle* m_triangle;
+    Terrain* m_terrain;
+
     bool m_running;
 
     bool first_mouse_move;
