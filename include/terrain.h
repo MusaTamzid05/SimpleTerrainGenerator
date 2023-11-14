@@ -15,7 +15,7 @@ struct Vertex {
 struct Shader;
 
 struct Terrain {
-    Terrain(int cols, int rows);
+    Terrain(int cols = -1, int rows = -1);
     virtual ~Terrain();
 
     void init();

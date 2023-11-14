@@ -5,6 +5,7 @@
 #include "triangle.h"
 #include "camera.h"
 #include "terrain.h"
+#include "terrain_height_map.h"
 
 
 
@@ -27,7 +28,8 @@ Window::Window(const std::string& title):m_running(false) {
     first_mouse_move = true;
 
     //m_triangle = new Triangle();
-    m_terrain = new Terrain(100, 100);
+    //m_terrain = new Terrain(100, 100);
+    m_terrain = new TerrainHeightMap("../assets/iceland_heightmap.png");
     m_terrain->init();
 
 }

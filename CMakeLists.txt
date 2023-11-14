@@ -14,6 +14,7 @@ SET(SOURCE_FILES
     src/camera.cpp
     src/linear_interpolator.cpp
     src/terrain.cpp
+    src/terrain_height_map.cpp
     )
 
 
