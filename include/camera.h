@@ -29,6 +29,8 @@ class Camera {
         void handle_keyboard(const Direction& direction, float delta_time);
         void handle_mouse_movement(float x_offset, float y_offset);
 
+        float m_z_far;
+        float m_speed;
 
     private:
         Camera();
@@ -41,7 +43,6 @@ class Camera {
 
         float m_yaw;
         float m_pitch;
-        float m_speed;
         float m_sensitivity;
 
         static Camera* m_instance;

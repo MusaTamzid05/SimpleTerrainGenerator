@@ -15,6 +15,7 @@ Camera::Camera() {
     zoom = 45.0f;
     m_speed = 2.5f;
     m_sensitivity = 0.1f;
+    m_z_far = 10.0f;
 
 }
 
@@ -48,8 +49,8 @@ glm::mat4 Camera::get_projection() const {
     return glm::perspective(
             glm::radians(zoom),
             (float) WIDTH / (float) HEIGHT,
-            0.01f,
-            10.0f
+            0.1f,
+            m_z_far
             );
 
 }

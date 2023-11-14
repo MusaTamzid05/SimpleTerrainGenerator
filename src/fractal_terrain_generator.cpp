@@ -15,6 +15,8 @@ TerrainFractalGenerator::TerrainFractalGenerator(
     m_min_height(min_height),
     m_max_height(max_height) {
         m_shader = new Shader("../shaders/fractal.vs", "../shaders/fractal.fs");
+        Camera::get_instance()->m_z_far = 100.0f;
+        Camera::get_instance()->m_speed = 20.0f;
     }
 
 TerrainFractalGenerator::~TerrainFractalGenerator() {
@@ -170,9 +172,8 @@ void TerrainFractalGenerator::update() {
     m_shader->set_mat4("view", view);
 
     glm::mat4 model = glm::mat4(1.0);
-    model = glm::translate(model, glm::vec3(0.0f, -0.5, 0.0f));
-    //model = glm::translate(model, glm::vec3(0.0f, -5.0, -10.0f));
-    //model = glm::scale(model, glm::vec3(20.0f, 20.0f, 20.0f));
+    model = glm::translate(model, glm::vec3(0.0f, -8.0, -10.0f));
+    model = glm::scale(model, glm::vec3(10.0f, 10.0f, 10.0f));
     m_shader->set_mat4("model", model);
 
 
