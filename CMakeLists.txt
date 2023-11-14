@@ -15,6 +15,7 @@ SET(SOURCE_FILES
     src/linear_interpolator.cpp
     src/terrain.cpp
     src/terrain_height_map.cpp
+    src/fractal_terrain_generator.cpp
     )
 
 

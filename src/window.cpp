@@ -6,6 +6,7 @@
 #include "camera.h"
 #include "terrain.h"
 #include "terrain_height_map.h"
+#include "fractal_terrain_generator.h"
 
 
 
@@ -29,7 +30,8 @@ Window::Window(const std::string& title):m_running(false) {
 
     //m_triangle = new Triangle();
     //m_terrain = new Terrain(100, 100);
-    m_terrain = new TerrainHeightMap("../assets/iceland_heightmap.png");
+    //m_terrain = new TerrainHeightMap("../assets/iceland_heightmap.png");
+    m_terrain = new TerrainFractalGenerator(1000, 1000, 100, 0.0f, 500.0f);
     m_terrain->init();
 
 }

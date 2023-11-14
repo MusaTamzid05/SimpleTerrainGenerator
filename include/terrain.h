@@ -26,7 +26,7 @@ struct Terrain {
 
 
     void render();
-    void update();
+    virtual void update();
 
     void set_vertex(int col, int row, const Vertex& vertex);
     Vertex get_vertex(int col, int row) const;
